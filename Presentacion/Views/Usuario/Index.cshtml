@@ -1,0 +1,67 @@
+﻿@model List<Presentacion.Models.UsuarioModel>
+@{
+    ViewData["Title"] = "Usuario";
+}
+<div id="PlaceHolder"></div>
+<div class="text-center">
+    <h1 class="display-4">Prueba Técnica Desarrollador Senior</h1>
+    <p>Se realizo la vista de la pagina de usuario en el cual se realizo ajustes visuales para tener el valor agregado a la prueba</p>
+</div>
+<div>
+    <button type="button" class="btn btn-primary" data-toggle="ajax-modal" data-target="#addUser"
+            data-url="@Url.Action("Create")">
+        Adicionar
+    </button>
+   
+    <br />
+    <br />
+    <table class="table table-striped" id="DtUsuario" style="width:100%" data-show-export="true"
+           data-pagination="true"
+           data-side-pagination="server"
+           data-click-to-select="true"
+           data-toolbar="#toolbar"
+           data-show-toggle="true"
+           data-show-columns="true">
+        
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Fecha de Nacimiento</th>
+                <th scope="col">Genero</th>
+                <th scope="col">Accion</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model) {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td>@item.Nombre</td>
+                <td>@item.FechaNacimiento.ToString("dd/MM/yyyy")</td>
+                @if ( @item.Genero =="F")
+                {
+                    <td>Femenino</td>
+                }
+                else
+                {
+                    <td>Masculino</td>
+                }
+                <td>
+                      @*  @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }) |*@
+
+                        <button type="button" class="btn btn-primary" data-toggle="ajax-modal" data-target="#addUser"
+                                data-url="@Url.Action($"Update/{item.Id}")">
+                            Editar
+                        </button> |
+                        <button type="button" class="btn btn-primary" data-toggle="ajax-modal" data-target="#addUser"
+                                data-url="@Url.Action($"Delete/{item.Id}")">
+                            Eliminar
+                        </button>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+    <button id="exportar" type="button" class="btn btn-primary">Exportar a excel</button>
+</div>

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "gkc6TEvxl0UyTRP9RaRIFTlzKc2Td+zBRj1kqmDkmb58BqsFP5c1e0n2oD59PVY6ulaGxprFUHQmNXKXL7LuYg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\arcan\\Source\\Repos\\PruebaTecnica\\Presentacion\\Presentacion.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\arcan\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
